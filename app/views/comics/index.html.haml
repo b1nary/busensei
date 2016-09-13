@@ -1,0 +1,23 @@
+%h1 Listing comics
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Blurb
+      %th
+      %th
+      %th
+
+  %tbody
+    - @comics.each do |comic|
+      %tr
+        %td= comic.title
+        %td= comic.blurb
+        %td= link_to 'Show', comic
+        %td= link_to 'Edit', edit_comic_path(comic)
+        %td= link_to 'Destroy', comic, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Comic', new_comic_path
