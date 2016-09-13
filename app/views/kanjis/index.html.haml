@@ -1,0 +1,35 @@
+%h1 Listing kanjis
+
+%table
+  %thead
+    %tr
+      %th Key
+      %th Word
+      %th Reading
+      %th Meaning
+      %th Notes
+      %th Synonyms
+      %th Opposites
+      %th Found in
+      %th
+      %th
+      %th
+
+  %tbody
+    - @kanjis.each do |kanji|
+      %tr
+        %td= kanji.key
+        %td= kanji.word
+        %td= kanji.reading
+        %td= kanji.meaning
+        %td= kanji.notes
+        %td= kanji.synonyms
+        %td= kanji.opposites
+        %td= kanji.found_in
+        %td= link_to 'Show', kanji
+        %td= link_to 'Edit', edit_kanji_path(kanji)
+        %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Kanji', new_kanji_path
