@@ -1,1 +1,15 @@
-%h1.text-xs-center Comprehensive database for high-level Kanji
+.row
+  .col-sm-6
+    %h1.text-xs-right Comprehensive database for high-level Kanji
+  .col-sm-6
+    = image_tag 'bret_tv.jpg'
+.row
+  .col-sm-4
+    - @kanjis.each do |kanji|
+      %span= kanji.word
+  .col-sm-4
+    - @videos.each do |kanji|
+      %span= kanji.title
+  .col-sm-4
+    - @comics.each do |kanji|
+      %span= kanji.title

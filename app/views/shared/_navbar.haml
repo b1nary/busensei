@@ -1,19 +1,19 @@
 %nav.navbar.navbar-fixed-top
   = link_to root_url, class: 'navbar-brand' do
-    %span.mdi.mdi-cards
-    Busensei
+    = image_tag 'busensei.png'
+    BUSENSEI
   %ul.nav.nav-pills.pull-md-right
     %li.nav-item
       = link_to kanjis_path, class: 'nav-link' do
-        %span.mdi.mdi-logout-variant
+        %span.mdi.mdi-translate
         Kanji
     %li.nav-item
       = link_to comics_path, class: 'nav-link' do
-        %span.mdi.mdi-logout-variant
+        %span.mdi.mdi-tree
         Comics
     %li.nav-item
       = link_to videos_path, class: 'nav-link' do
-        %span.mdi.mdi-logout-variant
+        %span.mdi.mdi-video
         Videos
     - if user_signed_in?
       %li.nav-item
