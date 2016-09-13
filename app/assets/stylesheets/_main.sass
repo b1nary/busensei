@@ -1,0 +1,60 @@
+html, body
+  height: 100%
+
+body
+  background: asset_url('bg.svg'), $gray-lighter
+  background-repeat: no-repeat
+  background-attachment: fixed
+  font-weight: 200
+  background-size: cover
+  background-position: center
+  padding-top: 3.5rem
+
+// Sticky footer
+.wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto -5.5rem
+  padding-top: 2rem
+
+.footer,
+.push
+  height: 2.5rem
+
+#flash
+  position: fixed
+  top: 1rem
+  left: 1rem
+  right: 1rem
+  z-index: 9999
+
+.delay
+  transition-delay: 1s
+
+::selection
+  background: $brand-primary
+  color: $gray-lightest
+
+[type="checkbox"],
+[type="radio"]
+  margin-right: .5em
+
+.mdi:before,
+.mdi-set
+  font-size: 1em
+
+img
+  max-width: 100%
+
+.superpencil
+  .tag-secondary
+    background-color: #FCE400
+    color: #774701
+    font-family: "Avenir Next", "Avenir", "Helvetica", "Arial", sans-serif
+    font-weight: bold
+
+  img
+    width: 17px
+    margin-right: -2px
+    margin-top: -1px

@@ -1,0 +1,16 @@
+%nav.navbar.navbar-fixed-top
+  = link_to root_url, class: 'navbar-brand' do
+    %span.mdi.mdi-cards
+    Busensei
+  %ul.nav.nav-pills.pull-md-right
+    %li.nav-item
+      - if user_signed_in?
+        %li.nav-item
+          = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+            %span.mdi.mdi-logout-variant
+            Sign Out
+      - else
+        %li.nav-item
+          = link_to new_user_session_path, class: 'nav-link' do
+            %span.mdi.mdi-login-variant
+            Sign In
