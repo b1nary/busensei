@@ -4,13 +4,24 @@
     Busensei
   %ul.nav.nav-pills.pull-md-right
     %li.nav-item
-      - if user_signed_in?
-        %li.nav-item
-          = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
-            %span.mdi.mdi-logout-variant
-            Sign Out
-      - else
-        %li.nav-item
-          = link_to new_user_session_path, class: 'nav-link' do
-            %span.mdi.mdi-login-variant
-            Sign In
+      = link_to kanjis_path, class: 'nav-link' do
+        %span.mdi.mdi-logout-variant
+        Kanji
+    %li.nav-item
+      = link_to comics_path, class: 'nav-link' do
+        %span.mdi.mdi-logout-variant
+        Comics
+    %li.nav-item
+      = link_to videos_path, class: 'nav-link' do
+        %span.mdi.mdi-logout-variant
+        Videos
+    - if user_signed_in?
+      %li.nav-item
+        = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+          %span.mdi.mdi-logout-variant
+          Sign Out
+    - else
+      %li.nav-item
+        = link_to new_user_session_path, class: 'nav-link' do
+          %span.mdi.mdi-login-variant
+          Sign In

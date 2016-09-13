@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
-  resources :videos
-  resources :comics
-  resources :kanjis
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # Devise
   devise_for :users
 
-  # Private
   authenticate :user do
+    resources :videos, except: [:index, :show]
+    resources :comics, except: [:index, :show]
+    resources :kanjis, except: [:index, :show]
   end
 
-  # Roots
-  root to: "welcomes#index"
+  resources :videos, only: [:index, :show]
+  resources :comics, only: [:index, :show]
+  resources :kanjis, only: [:index, :show]
 
-  # Reroute bad links to home
+  root to: "welcomes#index"
   get "*path", to: "welcomes#index"
 
 end

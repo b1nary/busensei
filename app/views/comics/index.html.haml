@@ -6,8 +6,9 @@
       %th Title
       %th Blurb
       %th
-      %th
-      %th
+      - if user_signed_in?
+        %th
+        %th
 
   %tbody
     - @comics.each do |comic|
@@ -15,9 +16,10 @@
         %td= comic.title
         %td= comic.blurb
         %td= link_to 'Show', comic
-        %td= link_to 'Edit', edit_comic_path(comic)
-        %td= link_to 'Destroy', comic, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - if user_signed_in?
+          %td= link_to 'Edit', edit_comic_path(comic)
+          %td= link_to 'Destroy', comic, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Comic', new_comic_path
+- if user_signed_in?
+  = link_to 'New Comic', new_comic_path

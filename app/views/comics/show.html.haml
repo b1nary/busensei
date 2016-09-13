@@ -6,7 +6,8 @@
 %p
   %b Blurb:
   = @comic.blurb
-
-= link_to 'Edit', edit_comic_path(@comic)
-\|
+  
+- if user_signed_in?
+  = link_to 'Edit', edit_comic_path(@comic)
+  \|
 = link_to 'Back', comics_path

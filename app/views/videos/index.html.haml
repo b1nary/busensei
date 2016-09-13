@@ -6,8 +6,9 @@
       %th Title
       %th Tag
       %th
-      %th
-      %th
+      - if user_signed_in?
+        %th
+        %th
 
   %tbody
     - @videos.each do |video|
@@ -15,9 +16,10 @@
         %td= video.title
         %td= video.tag
         %td= link_to 'Show', video
-        %td= link_to 'Edit', edit_video_path(video)
-        %td= link_to 'Destroy', video, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - if user_signed_in?
+          %td= link_to 'Edit', edit_video_path(video)
+          %td= link_to 'Destroy', video, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Video', new_video_path
+- if user_signed_in?
+  = link_to 'New Video', new_video_path

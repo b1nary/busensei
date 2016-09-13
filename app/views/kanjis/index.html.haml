@@ -12,8 +12,9 @@
       %th Opposites
       %th Found in
       %th
-      %th
-      %th
+      - if user_signed_in?
+        %th
+        %th
 
   %tbody
     - @kanjis.each do |kanji|
@@ -27,9 +28,10 @@
         %td= kanji.opposites
         %td= kanji.found_in
         %td= link_to 'Show', kanji
-        %td= link_to 'Edit', edit_kanji_path(kanji)
-        %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - if user_signed_in?
+          %td= link_to 'Edit', edit_kanji_path(kanji)
+          %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Kanji', new_kanji_path
+- if user_signed_in?
+  = link_to 'New Kanji', new_kanji_path
