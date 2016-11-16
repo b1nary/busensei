@@ -1,42 +1,27 @@
 %h1
-  %span.mdi.mdi-translate
-  Proverbs
+  %span.mdi.mdi-comment-question-outline
+  Japanese Proverbs
 - if user_signed_in?
   = link_to 'New Kanji', new_kanji_path
 = paginate @kanjis
-%table.table.table-striped
-  %thead
-    %tr
-      %th Word
-      %th Reading
-      %th English
-      %th Notes
-      %th Synonyms
-      %th Opposites
-      %th Found in
-      %th Origin
-      %th Category
-      %th Test
-      %th Level
-      - if user_signed_in?
-        %th
-        %th
-  %tbody
-    - @kanjis.each do |kanji|
-      = link_to kanji do
-        %tr
-          %td= kanji.word
-          %td= kanji.reading
-          %td= kanji.english
-          %td= kanji.notes
-          %td= kanji.synonyms
-          %td= kanji.opposites
-          %td= kanji.found_in
-          %td= kanji.origin
-          %td= kanji.category
-          %td= kanji.test
-          %td= kanji.level
-          - if user_signed_in?
-            %td= link_to 'Edit', edit_kanji_path(kanji)
-            %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
+- @kanjis.each_slice(3) do |row|
+  .row
+    - row.each do |kanji|
+      .col-sm-4
+        = link_to kanji do
+          .card
+            -# %h5.card-header
+            -#   %span.mdi.mdi-translate
+            -#   = kanji.category
+            .card-block
+              %h2= kanji.word
+              %p
+                = kanji.reading
+              %p
+                = kanji.english
+              %p
+                = kanji.notes
+              - if user_signed_in?
+                %td= link_to 'Edit', edit_kanji_path(kanji)
+                %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
 = paginate @kanjis

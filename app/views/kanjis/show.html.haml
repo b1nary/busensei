@@ -12,20 +12,8 @@
       %li.list-group-item
         %p English:
         = @kanji.english
-      -# %li.list-group-item
-      -#   %p Japanese:
-      -#   = @kanji.japanese
       %li.list-group-item
         %p Notes:
         = @kanji.notes
-      -# %li.list-group-item
-      -#   %p Synonyms:
-      -#   = @kanji.synonyms
-      -# %li.list-group-item
-      -#   %p Opposites:
-      -#   = @kanji.opposites
-      -# %li.list-group-item
-      -#   %p Found in:
-      -#   = @kanji.found_in
 - if user_signed_in?
   = link_to 'Edit', edit_kanji_path(@kanji)
