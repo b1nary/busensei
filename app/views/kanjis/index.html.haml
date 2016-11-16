@@ -1,9 +1,15 @@
 %h1
   %span.mdi.mdi-comment-question-outline
   Japanese Proverbs
+%p
+  It's really hard to learn Japanese for a number of reasons, one being that the language is very heavy with proverbs that can trip people up, it's essential for Japanese learners to become fluent in a lot of these and it will help learners sound more natural. The database on BuSensei consists of many proverbs that are hard to find in English or don't exist at all in translated texts. Enjoy!
+  %br
+  %small -- Bret
 - if user_signed_in?
-  = link_to 'New Kanji', new_kanji_path
-= paginate @kanjis
+  = link_to 'New Kanji', new_kanji_path, class: 'btn btn-success'
+  %br
+  %br
+= paginate @kanjis, theme: 'twitter-bootstrap-4'
 - @kanjis.each_slice(3) do |row|
   .row
     - row.each do |kanji|
@@ -24,4 +30,4 @@
               - if user_signed_in?
                 %td= link_to 'Edit', edit_kanji_path(kanji)
                 %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
-= paginate @kanjis
+= paginate @kanjis, theme: 'twitter-bootstrap-4'
