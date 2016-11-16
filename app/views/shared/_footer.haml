@@ -2,7 +2,13 @@
   .container-fluid.m-t-3.m-b-1
     .row
       .col-sm-6
-        %small Copyright © 2016 Superpencil Ltd.
+        %small
+          Copyright
+          - if user_signed_in?
+            = link_to '©', destroy_user_session_path, method: :delete
+          - else
+            = link_to '©', new_user_session_path
+          2016 Bret Mayer
       .col-sm-6
         .pull-sm-right
           %a{href: "http://www.superpencil.com/?utm_source=timegiver&utm_medium=footer+link&utm_campaign=project", class: 'superpencil', alt: 'Superpencil'}

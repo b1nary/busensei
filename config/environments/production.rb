@@ -61,7 +61,7 @@ Rails.application.configure do
 
   # Host
   config.action_mailer.default_url_options = {
-    :host => 'busensei.herokuapp.com' 
+    :host => 'busenseisite.herokuapp.com'
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
