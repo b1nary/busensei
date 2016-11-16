@@ -3,6 +3,7 @@
   Proverbs
 - if user_signed_in?
   = link_to 'New Kanji', new_kanji_path
+= paginate @kanjis
 %table.table.table-striped
   %thead
     %tr
@@ -38,3 +39,4 @@
           - if user_signed_in?
             %td= link_to 'Edit', edit_kanji_path(kanji)
             %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= paginate @kanjis

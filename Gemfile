@@ -34,6 +34,9 @@ gem 'jquery-rails', '~> 4.2.1' # jQuery, super handy
 gem 'bootstrap', '~> 4.0.0.alpha3.1' # Bootstrap 4 for layout
 gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
 
+# Busensei stuff
+gem 'kaminari', '~> 0.17.0'
+
 # Bower
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0' # Needed for Bootstrap 4 Tooltips and Popovers
@@ -49,7 +52,7 @@ end
 # Development and Testing
 group :development, :test do
   gem 'byebug', '~> 9.0.3'
-  gem 'rails-controller-testing', :git => 'https://github.com/rails/rails-controller-testing' # Needed for RSPEC on controllers
+  gem 'rails-controller-testing', git: 'https://github.com/rails/rails-controller-testing' # Needed for RSPEC on controllers
   gem 'rspec-rails', '~> 3.5.0' # Running tests
 end
 

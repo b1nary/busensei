@@ -4,7 +4,7 @@ class KanjisController < ApplicationController
   # GET /kanjis
   # GET /kanjis.json
   def index
-    @kanjis = Kanji.all
+    @kanjis = Kanji.all.page(params[:page]).per(200)
   end
 
   # GET /kanjis/1
@@ -62,13 +62,14 @@ class KanjisController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_kanji
-      @kanji = Kanji.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def kanji_params
-      params.require(:kanji).permit(:key, :word, :reading, :meaning, :notes, :synonyms, :opposites, :found_in)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_kanji
+    @kanji = Kanji.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def kanji_params
+    params.require(:kanji).permit(:key, :word, :reading, :meaning, :notes, :synonyms, :opposites, :found_in)
+  end
 end
