@@ -1,31 +1,31 @@
-%p#notice= notice
-
-%p
-  %b Key:
-  = @kanji.key
-%p
-  %b Word:
-  = @kanji.word
-%p
-  %b Reading:
-  = @kanji.reading
-%p
-  %b Meaning:
-  = @kanji.meaning
-%p
-  %b Notes:
-  = @kanji.notes
-%p
-  %b Synonyms:
-  = @kanji.synonyms
-%p
-  %b Opposites:
-  = @kanji.opposites
-%p
-  %b Found in:
-  = @kanji.found_in
-
+.card
+  .card-block
+    %h5.card-title
+      %span.mdi.mdi-translate
+      Details
+    %ul.list-group.list-group-flush
+      %li.list-group-item
+        %h1= @kanji.word
+      %li.list-group-item
+        %p Reading:
+        = @kanji.reading
+      %li.list-group-item
+        %p English:
+        = @kanji.english
+      -# %li.list-group-item
+      -#   %p Japanese:
+      -#   = @kanji.japanese
+      %li.list-group-item
+        %p Notes:
+        = @kanji.notes
+      -# %li.list-group-item
+      -#   %p Synonyms:
+      -#   = @kanji.synonyms
+      -# %li.list-group-item
+      -#   %p Opposites:
+      -#   = @kanji.opposites
+      -# %li.list-group-item
+      -#   %p Found in:
+      -#   = @kanji.found_in
 - if user_signed_in?
   = link_to 'Edit', edit_kanji_path(@kanji)
-  \|
-= link_to 'Back', kanjis_path

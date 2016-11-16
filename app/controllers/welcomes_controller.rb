@@ -1,6 +1,6 @@
 class WelcomesController < ApplicationController
   def index
-    @kanjis = Kanji.all
+    @kanjis = Kanji.order('RANDOM()').limit(1)
     @videos = Video.all
     @comics = Comic.all
   end

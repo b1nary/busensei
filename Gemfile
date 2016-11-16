@@ -36,6 +36,8 @@ gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
 
 # Busensei stuff
 gem 'kaminari', '~> 0.17.0'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 # Bower
 source 'https://rails-assets.org' do

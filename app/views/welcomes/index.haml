@@ -1,13 +1,45 @@
-.row.text-sm-center
-  .col-sm-12
-    %h1 Comprehensive database for high-level Kanji
-    -# %br
-    -# .kanji-list
-    -#   - @kanjis.each do |kanji|
-    -#     = link_to kanji.word, kanji
-    -# .kanji-list
-    -#   - @videos.each do |kanji|
-    -#     %span= kanji.title
-    -# .kanji-list
-    -#   - @comics.each do |kanji|
-    -#     %span= kanji.title
+.row
+  .col-xs-4.col-sm-3.col-lg-2
+    = image_tag 'bret_tv.jpg', class: 'img-rounded'
+  .col-xs-8.col-sm-9.col-lg-10
+    %h1 Hi! I'm Bret and I like Kanji!
+    %h5 Comprehensive database for high-level Kanji
+    %a{href: 'https://twitter.com/busensei', target:'_blank', class: 'btn btn-info'}
+      %span.mdi.mdi-twitter
+      Twitter
+%br
+%br
+.row
+  .col-sm-6
+    .card
+      .card-block
+        %h5.card-title
+          %span.mdi.mdi-translate
+          Random Vocab
+        %ul.list-group.list-group-flush
+          - @kanjis.each do |kanji|
+            %li.list-group-item
+              = link_to kanji do
+                %h1= kanji.word
+                %p= kanji.reading
+                %p= kanji.english
+  -# .col-sm-4
+  -#   .card
+  -#     .card-block
+  -#       %h5.card-title
+  -#         %span.mdi.mdi-video
+  -#         Videos
+  -#       %ul.list-group.list-group-flush
+  -#         - @videos.each do |video|
+  -#           %li.list-group-item= video.title
+  .col-sm-6
+    .card
+      .card-block
+        %h5.card-title
+          %span.mdi.mdi-cards
+          Illustration of the Day
+        %ul.list-group.list-group-flush
+          %a{href: '/tuiIn_raku_kon.jpg', target: '_blank'}
+            = image_tag 'tuiIn_raku_kon.jpg', class: 'img-rounded'
+          -# - @comics.each do |comic|
+          -#   %li.list-group-item= comic.title
