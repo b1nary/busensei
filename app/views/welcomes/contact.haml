@@ -2,6 +2,7 @@
   .col-sm-3
     = image_tag 'bret_tv.jpg', class: 'img-rounded'
   .col-sm-9
+    %h2 About & Contact
     %p
       ブレット・メイヤーです。漢字ヲタクです。漢字検定一級に加え、全級合格できた。日本漢字能力検定協会及び立命館大学認定の『漢字教育士』として、外国人・日本人・老若男女、漢字や諺を教えます！
       %br
@@ -14,17 +15,13 @@
       %li Facebook: /Bret Mayer
       %li LINE: busensei
       %li Email: busensei(at)gmail(dot)com
-.row.text-sm-center
-  .col-sm-12
-
-    %p
-      %br
-      %h2 Achievements & Certifications
-      %a{:href => "http://busensei.com/wp-content/uploads/2014/01/allcerts.jpg"}
-        %img.aligncenter.size-medium.wp-image-879{:alt => "allcerts", :height => "400", :sizes => "(max-width: 600px) 100vw, 600px", :src => "http://busensei.com/wp-content/uploads/2014/01/allcerts-600x400.jpg", :srcset => "http://busensei.com/wp-content/uploads/2014/01/allcerts-600x400.jpg 600w, http://busensei.com/wp-content/uploads/2014/01/allcerts-300x200.jpg 300w, http://busensei.com/wp-content/uploads/2014/01/allcerts-900x600.jpg 900w", :width => "600"}/
+%br
 .row
-  .col-sm-12
-    %table.table.table-striped
+  .col-sm-3
+    = image_tag 'certs.jpg', class: 'img-rounded'
+  .col-sm-9
+    %h2 Achievements & Certifications
+    %table.table.table-inverse
       %tbody
         %tr
           %td Japan Kanji Aptitude Test Level 1
@@ -96,7 +93,7 @@
           %td Japanese-Language Proficiency Test Level N1
           %td 日本語能力試験レベルN1
           %td
-    %table.table
+    %table.table.table-inverse
       %tbody
         %tr
           %td Shirakawa Shizuka Award for Excellence in Kanji Education (4th annual Exellence Award)
@@ -109,6 +106,10 @@
           %td
             %a{:href => "http://www.kanken.or.jp/lifelong/"}> 漢検生涯学習ネットワーク
             会員
+%br
+.row
+  .col-sm-3
+  .col-sm-9
     %h2 ぶ先生 In the Media
     .row
       .col-md-4
