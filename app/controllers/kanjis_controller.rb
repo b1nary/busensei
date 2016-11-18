@@ -4,7 +4,7 @@ class KanjisController < ApplicationController
   # GET /kanjis
   # GET /kanjis.json
   def index
-    @kanjis = Kanji.all.page(params[:page]).per(50)
+    @kanjis = Kanji.all.order(created_at: :desc).page(params[:page]).per(50)
     # @kanjis = Kanji.search { fulltext 'Vocab' }
   end
 

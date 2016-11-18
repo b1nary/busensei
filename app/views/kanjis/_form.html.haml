@@ -1,34 +1,24 @@
-= form_for @kanji do |f|
+= simple_form_for @kanji do |f|
   - if @kanji.errors.any?
     #error_explanation
       %h2= "#{pluralize(@kanji.errors.count, "error")} prohibited this kanji from being saved:"
       %ul
         - @kanji.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :key
-    = f.number_field :key
-  .field
-    = f.label :word
-    = f.text_field :word
-  .field
-    = f.label :reading
-    = f.text_field :reading
-  .field
-    = f.label :meaning
-    = f.text_field :meaning
-  .field
-    = f.label :notes
-    = f.text_field :notes
-  .field
-    = f.label :synonyms
-    = f.text_field :synonyms
-  .field
-    = f.label :opposites
-    = f.text_field :opposites
-  .field
-    = f.label :found_in
-    = f.text_field :found_in
-  .actions
-    = f.submit 'Save'
+  .row
+    .col-sm-6
+      = f.input :key
+      = f.input :word
+      = f.input :reading
+      = f.input :english
+      = f.input :notes
+      = f.input :synonyms
+      = f.input :opposites
+    .col-sm-6
+      = f.input :found_in
+      = f.input :japanese
+      = f.input :origin
+      = f.input :test
+      = f.input :level
+      = f.input :category
+      = f.button :submit
