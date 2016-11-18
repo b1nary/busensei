@@ -12,6 +12,7 @@ gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
 
 # Authentication
 gem 'devise', '~> 4.2.0' # Users! Everywhere!
+gem 'devise-i18n', '~> 1.1.0' # Translations for users
 
 # Precompilers
 gem 'haml-rails', '~> 0.9.0' # HAML to HTML
@@ -36,8 +37,6 @@ gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
 
 # Busensei stuff
 gem 'kaminari', '~> 0.17.0'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
 
 # Bower
 source 'https://rails-assets.org' do

@@ -1,16 +1,12 @@
-= form_for @video do |f|
+= simple_form_for @video do |f|
   - if @video.errors.any?
     #error_explanation
       %h2= "#{pluralize(@video.errors.count, "error")} prohibited this video from being saved:"
       %ul
         - @video.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :tag
-    = f.text_field :tag
-  .actions
-    = f.submit 'Save'
+  = f.input :title
+  %p Title can be anything
+  = f.input :tag
+  %p The tag is the identifier of the YouTube video
+  = f.button :submit

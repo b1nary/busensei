@@ -1,25 +1,22 @@
-%h1 Listing comics
-
-%table
-  %thead
-    %tr
-      %th Title
-      %th Blurb
-      %th
-      - if user_signed_in?
-        %th
-        %th
-
-  %tbody
-    - @comics.each do |comic|
-      %tr
-        %td= comic.title
-        %td= comic.blurb
-        %td= link_to 'Show', comic
-        - if user_signed_in?
-          %td= link_to 'Edit', edit_comic_path(comic)
-          %td= link_to 'Destroy', comic, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+%h1
+  %span.mdi.mdi-cards
+  Illustrations
 %br
 - if user_signed_in?
-  = link_to 'New Comic', new_comic_path
+  = link_to 'New Illustration', new_comic_path, class: 'btn btn-success'
+  %br
+  %br
+- @comics.each_slice(2) do |row|
+  .row
+    - row.each do |comic|
+      .col-sm-6
+        = link_to comic do
+          .card
+            %h5.card-header
+              = comic.title
+            .card-block
+              = simple_format comic.blurb
+              - if user_signed_in?
+                %br
+                = link_to 'Edit', edit_comic_path(comic), class: 'btn btn-secondary'
+                = link_to 'Delete', comic, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'

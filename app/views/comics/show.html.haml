@@ -1,13 +1,5 @@
-%p#notice= notice
+%h1= @comic.title
+= simple_format @comic.blurb
 
-%p
-  %b Title:
-  = @comic.title
-%p
-  %b Blurb:
-  = @comic.blurb
-  
 - if user_signed_in?
-  = link_to 'Edit', edit_comic_path(@comic)
-  \|
-= link_to 'Back', comics_path
+  = link_to 'Edit', edit_comic_path(@comic), class: 'btn btn-secondary'

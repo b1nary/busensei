@@ -15,7 +15,7 @@
 %br
 %br
 .row
-  .col-sm-6
+  .col-lg-4
     .card
       .card-block
         %h5.card-title
@@ -28,21 +28,21 @@
                 %h1= kanji.word
                 %p= kanji.reading
                 %p= kanji.english
-  -# .col-sm-4
-  -#   .card
-  -#     .card-block
-  -#       %h5.card-title
-  -#         %span.mdi.mdi-video
-  -#         Videos
-  -#       %ul.list-group.list-group-flush
-  -#         - @videos.each do |video|
-  -#           %li.list-group-item= video.title
-  .col-sm-6
+  .col-lg-4
+    .card
+      .card-block
+        %h5.card-title
+          %span.mdi.mdi-video
+          Latest Video
+        - @videos.each do |video|
+          .embed-responsive.embed-responsive-16by9
+            %iframe{allowfullscreen: "", src: "https://www.youtube.com/embed/#{video.tag}", class: 'embed-responsive-item'}
+  .col-lg-4
     .card
       .card-block
         %h5.card-title
           %span.mdi.mdi-cards
-          Illustration of the Day
+          Latest Illustration
         %ul.list-group.list-group-flush
           %a{href: '/tuiIn_raku_kon.jpg', target: '_blank'}
             = image_tag 'tuiIn_raku_kon.jpg', class: 'img-rounded'

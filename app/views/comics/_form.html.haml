@@ -1,16 +1,10 @@
-= form_for @comic do |f|
+= simple_form_for @comic do |f|
   - if @comic.errors.any?
     #error_explanation
       %h2= "#{pluralize(@comic.errors.count, "error")} prohibited this comic from being saved:"
       %ul
         - @comic.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :blurb
-    = f.text_field :blurb
-  .actions
-    = f.submit 'Save'
+  = f.input :title
+  = f.input :blurb, as: :text
+  = f.button :submit
