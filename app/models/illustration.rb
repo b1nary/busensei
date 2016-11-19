@@ -1,4 +1,4 @@
-class Comic < ApplicationRecord
+class Illustration < ApplicationRecord
   has_attached_file :image, styles: {
     small: '100x100>',
     medium: '500x500>',

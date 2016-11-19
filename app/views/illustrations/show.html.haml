@@ -1,0 +1,6 @@
+%h1= @illustration.title
+= image_tag @illustration.image.url(:large)
+= simple_format @illustration.blurb
+
+- if user_signed_in?
+  = link_to 'Edit', edit_illustration_path(@illustration), class: 'btn btn-secondary'

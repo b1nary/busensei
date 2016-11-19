@@ -1,6 +1,0 @@
-%h1= @comic.title
-= image_tag @comic.image.url(:large)
-= simple_format @comic.blurb
-
-- if user_signed_in?
-  = link_to 'Edit', edit_comic_path(@comic), class: 'btn btn-secondary'

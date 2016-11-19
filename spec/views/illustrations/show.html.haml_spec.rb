@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "comics/show", type: :view do
+RSpec.describe "illustrations/show", type: :view do
   before(:each) do
-    @comic = assign(:comic, Comic.create!(
+    @illustration = assign(:illustration, Illustration.create!(
       :title => "Title",
       :blurb => "Blurb"
     ))

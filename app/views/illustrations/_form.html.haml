@@ -1,0 +1,11 @@
+= simple_form_for(@illustration, multipart: true) do |f|
+  - if @illustration.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@illustration.errors.count, "error")} prohibited this illustration from being saved:"
+      %ul
+        - @illustration.errors.full_messages.each do |msg|
+          %li= msg
+  = f.input :title
+  = f.input :image, as: :file
+  = f.input :blurb, as: :text
+  = f.button :submit
