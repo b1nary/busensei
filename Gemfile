@@ -37,6 +37,8 @@ gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
 
 # Busensei stuff
 gem 'kaminari', '~> 0.17.0'
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 
 # Bower
 source 'https://rails-assets.org' do

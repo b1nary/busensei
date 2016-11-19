@@ -1,4 +1,5 @@
 %h1= @comic.title
+= image_tag @comic.image.url(:large)
 = simple_format @comic.blurb
 
 - if user_signed_in?

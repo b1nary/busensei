@@ -15,6 +15,7 @@
             %h5.card-header
               = comic.title
             .card-block
+              = image_tag @comic.image.url(:medium), class: 'img-fluid img-rounded'
               = simple_format comic.blurb
               - if user_signed_in?
                 %br

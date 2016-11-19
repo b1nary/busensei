@@ -43,8 +43,8 @@
         %h5.card-title
           %span.mdi.mdi-cards
           Latest Illustration
-        %ul.list-group.list-group-flush
-          %a{href: '/tuiIn_raku_kon.jpg', target: '_blank'}
-            = image_tag 'tuiIn_raku_kon.jpg', class: 'img-rounded'
-          -# - @comics.each do |comic|
-          -#   %li.list-group-item= comic.title
+        - @comics.each do |comic|
+          = link_to comic do
+            = comic.title
+            = image_tag @comic.image.url(:medium), class: 'img-fluid img-rounded'
+            = simple_format comic.blurb
