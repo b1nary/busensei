@@ -15,7 +15,7 @@
             %h5.card-header
               = illustration.title
             .card-block
-              = image_tag @illustration.image.url(:medium), class: 'img-fluid img-rounded'
+              = image_tag illustration.image.url(:medium), class: 'img-fluid img-rounded'
               = simple_format illustration.blurb
               - if user_signed_in?
                 %br

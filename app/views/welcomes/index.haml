@@ -46,5 +46,5 @@
         - @illustrations.each do |illustration|
           = link_to illustration do
             = illustration.title
-            = image_tag @illustration.image.url(:medium), class: 'img-fluid img-rounded'
+            = image_tag illustration.image.url(:medium), class: 'img-fluid img-rounded'
             = simple_format illustration.blurb
