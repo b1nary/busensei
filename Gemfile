@@ -17,14 +17,10 @@ gem 'devise-i18n', '~> 1.1.0' # Translations for users
 # Precompilers
 gem 'haml-rails', '~> 0.9.0' # HAML to HTML
 gem 'sass-rails', '~> 5.0.4' # Sass to CSS
-gem 'coffee-rails', '~> 4.2.1' # Coffeescript to JS
 gem 'jbuilder', '~> 2.6.0' # JSON
 gem 'uglifier', '~> 3.0.0' # Clean outputs
-gem 'redcarpet', '~> 3.3.4' # Markdown
 
 # Forms
-gem 'mail_form', github: 'plataformatec/mail_form', branch: 'master' # really?
-gem 'nested_form', '~> 0.3.2' # Formception
 gem 'simple_form', '~> 3.2.1' # Unformception
 
 # Alerts
@@ -32,19 +28,16 @@ gem 'bootbox-rails', '~> 0.5.0' # Fancy Bootstrap alerts
 
 # Vendor
 gem 'jquery-rails', '~> 4.2.1' # jQuery, super handy
-gem 'bootstrap', '~> 4.0.0.alpha3.1' # Bootstrap 4 for layout
-gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
+gem 'bootstrap', '~> 4.0.0.alpha5' # Bootstrap 4 for layout
 
 # Busensei stuff
 gem 'kaminari', '~> 0.17.0'
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+gem 'paperclip', '~> 5.1.0'
+gem 'aws-sdk', '~> 2.6.26'
 
 # Bower
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0' # Needed for Bootstrap 4 Tooltips and Popovers
-  gem 'rails-assets-chosen', '~> 1.6.2' # Beautiful Select dropdowns
-  gem 'rails-assets-animate.css', '~> 3.5.2' # CSS Animations
 end
 
 # Docs
