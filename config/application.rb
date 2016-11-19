@@ -13,6 +13,5 @@ module Busensei
     # -- all .rb files in that directory are automatically loaded.
     config.sass.preferred_syntax = :sass
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    config.paperclip_defaults = { s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com", }
   end
 end
