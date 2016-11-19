@@ -1,5 +1,5 @@
-class ChangeIllustrationsToIllustrations < ActiveRecord::Migration[5.0]
+class ChangeComicsToIllustrations < ActiveRecord::Migration[5.0]
   def change
-    rename_table :illustrations, :illustrations
+    rename_table :comics, :illustrations
   end
 end
