@@ -10,23 +10,21 @@
   %br
   %br
 = paginate @kanjis, theme: 'twitter-bootstrap-4'
-- @kanjis.each_slice(3) do |row|
+- @kanjis.each_slice(1) do |row|
   .row
     - row.each do |kanji|
-      .col-sm-4
+      .col-sm-12
         = link_to kanji do
           .card
             -# %h5.card-header
             -#   %span.mdi.mdi-translate
             -#   = kanji.category
             .card-block
-              %h2= kanji.word
+              %h1= kanji.word
               %p
                 = kanji.reading
               %p
                 = kanji.english
-              %p
-                = kanji.notes
               - if user_signed_in?
                 %td= link_to 'Edit', edit_kanji_path(kanji)
                 %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
