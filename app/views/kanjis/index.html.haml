@@ -10,10 +10,10 @@
   %br
   %br
 = paginate @kanjis, theme: 'twitter-bootstrap-4'
-- @kanjis.each_slice(1) do |row|
+- @kanjis.each_slice(3) do |row|
   .row
     - row.each do |kanji|
-      .col-sm-12
+      .col-sm-4
         = link_to kanji do
           .card
             -# %h5.card-header
