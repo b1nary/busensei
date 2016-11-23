@@ -1,0 +1,31 @@
+%h1
+  %span.mdi.mdi-comment-question-outline
+  Study Materials
+%p
+  All my study materials for KanKen1, KotoKen, etc. It's all just sorta dumped in here at the moment. Working on organization!
+  %br
+  漢検やこと検などの勉強資料の保管場所です。必死に整理整頓をやっていますので、ご了承ください。
+- if user_signed_in?
+  = link_to 'New Kanji', new_kanji_path, class: 'btn btn-success'
+  %br
+  %br
+= paginate @kanjis, theme: 'twitter-bootstrap-4'
+- @kanjis.each_slice(3) do |row|
+  .row
+    - row.each do |kanji|
+      .col-sm-4
+        = link_to kanji do
+          .card
+            -# %h5.card-header
+            -#   %span.mdi.mdi-translate
+            -#   = kanji.category
+            .card-block
+              %h1= kanji.word
+              %p
+                = kanji.reading
+              %p
+                = kanji.english
+              - if user_signed_in?
+                %td= link_to 'Edit', edit_kanji_path(kanji)
+                %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= paginate @kanjis, theme: 'twitter-bootstrap-4'

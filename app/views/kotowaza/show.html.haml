@@ -1,0 +1,19 @@
+.card
+  .card-block
+    %h5.card-title
+      %span.mdi.mdi-translate
+      Details
+    %ul.list-group.list-group-flush
+      %li.list-group-item
+        %h1= @kanji.word
+      %li.list-group-item
+        %p Reading:
+        = @kanji.reading
+      %li.list-group-item
+        %p English:
+        = @kanji.english
+      %li.list-group-item
+        %p Notes:
+        = @kanji.notes
+- if user_signed_in?
+  = link_to 'Edit', edit_kanji_path(@kanji)
