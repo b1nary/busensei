@@ -2,16 +2,15 @@
   .col-xs-4.col-sm-3.col-lg-2
     = image_tag 'bret_tv.jpg', class: 'img-rounded'
   .col-xs-8.col-sm-9.col-lg-10
-    %h5 Hi, I'm Bret! Please enjoy my Japanese study materials!
-    %h5 漢字ヲタク　ブレット・メイヤーです。通称『ぶ先生』！漢字や諺の勉強資料を纏めてアップした！楽しんで漢字を勉強してください！
+    %h5= t('.intro')
     %a{href: 'https://twitter.com/busensei', target:'_blank', class: 'btn btn-info'}
       %span.mdi.mdi-twitter
       Twitter
     %br
     %br
     .alert.alert-warning
-      %b 大幅改装中！ /  Users of the old site!
-      Things are going to be under construction for a little while. I hope to have all my data back up and ready for browsing soon!
+      %b= t('.alert.title')
+      = t('.alert.body')
 %br
 %br
 .row
@@ -20,7 +19,7 @@
       .card-block
         %h5.card-title
           %span.mdi.mdi-translate
-          Random Vocab
+          = t('.random_vocab')
         %ul.list-group.list-group-flush
           - @kanjis.each do |kanji|
             %li.list-group-item
@@ -33,7 +32,7 @@
       .card-block
         %h5.card-title
           %span.mdi.mdi-video
-          Latest Video
+          = t('.latest_video')
         - @videos.each do |video|
           .embed-responsive.embed-responsive-16by9
             %iframe{allowfullscreen: "", src: "https://www.youtube.com/embed/#{video.tag}", class: 'embed-responsive-item'}
@@ -42,7 +41,7 @@
       .card-block
         %h5.card-title
           %span.mdi.mdi-cards
-          Latest Illustration
+          = t('.latest_illustration')
         - @illustrations.each do |illustration|
           = link_to illustration do
             = illustration.title

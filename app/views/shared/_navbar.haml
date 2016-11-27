@@ -1,24 +1,29 @@
 %nav.navbar.navbar-fixed-top.navbar-light.bg-faded
   = link_to root_url, class: 'navbar-brand' do
-    BuSensei
+    = t('.brand')
   %ul.nav.nav-pills.float-md-right
     %li.nav-item
       = link_to kanjis_path, class: 'nav-link' do
         %span.mdi.mdi-comment-question-outline
-        Test
+        = t('.test')
     %li.nav-item
       = link_to kanjis_path, class: 'nav-link' do
         %span.mdi.mdi-comment-question-outline
-        漢検/諺/当て字/等々・Study Materials
+        = t('.study_materials')
     %li.nav-item
       = link_to illustrations_path, class: 'nav-link' do
         %span.mdi.mdi-cards
-        イラストで解説・Illustrations
+        = t('.illustrations')
     %li.nav-item
       = link_to videos_path, class: 'nav-link' do
         %span.mdi.mdi-video
-        動画・Videos
+        = t('.videos')
     %li.nav-item
       = link_to contact_path, class: 'nav-link' do
         %span.mdi.mdi-account
-        About/Contact
+        = t('.about_contact')
+    %li.nav-item
+      - if I18n.locale == :en
+        = link_to content_tag(:span, '', class: 'mdi mdi-translate') + ' 日本語', current_path_new_locale('ja'.to_sym), class: 'btn btn-secondary'
+      - else
+        = link_to content_tag(:span, '', class: 'mdi mdi-translate') + ' English', current_path_new_locale('en'.to_sym), class: 'btn btn-secondary'

@@ -1,0 +1,18 @@
+ja:
+  shared:
+    navbar:
+      brand: BuSensei
+      test: Test
+      study_materials: 漢検/諺/当て字/等々
+      illustrations: イラストで解説
+      videos: 動画
+      about_contact: About/Contact
+  welcomes:
+    index:
+      intro: 漢字ヲタク　ブレット・メイヤーです。通称『ぶ先生』！漢字や諺の勉強資料を纏めてアップした！楽しんで漢字を勉強してください！
+      alert:
+        title: 大幅改装中！
+        body: Things are going to be under construction for a little while. I hope to have all my data back up and ready for browsing soon!
+      random_vocab: Random Vocab
+      latest_video: Latest Video
+      latest_illustration: Latest Illustration

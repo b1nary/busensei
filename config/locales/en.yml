@@ -1,0 +1,18 @@
+en:
+  shared:
+    navbar:
+      brand: BuSensei
+      test: Test
+      study_materials: Study Materials
+      illustrations: Illustrations
+      videos: Videos
+      about_contact: About/Contact
+  welcomes:
+    index:
+      intro: Hi, I'm Bret! Please enjoy my Japanese study materials!
+      alert:
+        title: Users of the old site!
+        body: Things are going to be under construction for a little while. I hope to have all my data back up and ready for browsing soon!
+      random_vocab: Random Vocab
+      latest_video: Latest Video
+      latest_illustration: Latest Illustration

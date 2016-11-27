@@ -1,17 +1,28 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # Scope manages languages
+  scope '/:locale', locale: /#{I18n.available_locales.join('|')}/ do
+    # Only for logged-in users
+    devise_for :users
+    authenticate :user do
+      resources :videos, except: [:index, :show]
+      resources :illustrations, except: [:index, :show]
+      resources :kanjis, except: [:index, :show]
+    end
 
-  authenticate :user do
-    resources :videos, except: [:index, :show]
-    resources :illustrations, except: [:index, :show]
-    resources :kanjis, except: [:index, :show]
+    # Public stuff
+    resources :videos, only: [:index, :show]
+    resources :illustrations, only: [:index, :show]
+    resources :kanjis, only: [:index, :show]
+    get '/contact', to: 'welcomes#contact'
+
+    # Main page
+    root to: 'welcomes#index'
+
+    # All other routes are an error, they go home
+    get '*path', to: 'welcomes#index'
   end
 
-  resources :videos, only: [:index, :show]
-  resources :illustrations, only: [:index, :show]
-  resources :kanjis, only: [:index, :show]
-
-  root to: 'welcomes#index'
-  get '/contact', to: 'welcomes#contact'
-  get '*path', to: 'welcomes#index'
+  # Redirect to language
+  root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
+  get '/*path', to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: { path: /(?!(#{I18n.available_locales.join('|')})\/).*/ }, format: false
 end
