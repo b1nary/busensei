@@ -1,0 +1,29 @@
+- if user_signed_in?
+  = link_to 'New Item', new_item_path, class: 'btn btn-success'
+= paginate items, theme: 'twitter-bootstrap-4'
+- items.each_slice(3) do |row|
+  .row
+    - row.each do |item|
+      .col-sm-4
+        = link_to item do
+          .card
+            %h5.card-header
+              - if item.category == 'Vocab'
+                %span.mdi.mdi-dictionary
+                Vocabulary
+              - if item.category == 'kotowaza'
+                %span.mdi.mdi-duck
+                Proverb
+              - if item.category == 'yjjg'
+                %span.mdi.mdi-cat
+                Idiom
+            .card-block
+              %h1= item.word
+              %p
+                = item.reading
+              %p
+                = item.english
+              - if user_signed_in?
+                %td= link_to 'Edit', edit_item_path(item)
+                %td= link_to 'Destroy', item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= paginate items, theme: 'twitter-bootstrap-4'

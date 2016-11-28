@@ -6,26 +6,26 @@
   %br
   漢検やこと検などの勉強資料の保管場所です。必死に整理整頓をやっていますので、ご了承ください。
 - if user_signed_in?
-  = link_to 'New Kanji', new_kanji_path, class: 'btn btn-success'
+  = link_to 'New Item', new_item_path, class: 'btn btn-success'
   %br
   %br
-= paginate @kanjis, theme: 'twitter-bootstrap-4'
-- @kanjis.each_slice(3) do |row|
+= paginate @items, theme: 'twitter-bootstrap-4'
+- @items.each_slice(3) do |row|
   .row
-    - row.each do |kanji|
+    - row.each do |item|
       .col-sm-4
-        = link_to kanji do
+        = link_to item do
           .card
             -# %h5.card-header
             -#   %span.mdi.mdi-translate
-            -#   = kanji.category
+            -#   = item.category
             .card-block
-              %h1= kanji.word
+              %h1= item.word
               %p
-                = kanji.reading
+                = item.reading
               %p
-                = kanji.english
+                = item.english
               - if user_signed_in?
-                %td= link_to 'Edit', edit_kanji_path(kanji)
-                %td= link_to 'Destroy', kanji, :method => :delete, :data => { :confirm => 'Are you sure?' }
-= paginate @kanjis, theme: 'twitter-bootstrap-4'
+                %td= link_to 'Edit', edit_item_path(item)
+                %td= link_to 'Destroy', item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= paginate @items, theme: 'twitter-bootstrap-4'

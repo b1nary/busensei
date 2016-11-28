@@ -5,15 +5,18 @@
       Details
     %ul.list-group.list-group-flush
       %li.list-group-item
-        %h1= @kanji.word
+        %h1= @item.word
       %li.list-group-item
         %p Reading:
-        = @kanji.reading
+        = @item.reading
       %li.list-group-item
         %p English:
-        = @kanji.english
+        = @item.english
       %li.list-group-item
         %p Notes:
-        = @kanji.notes
+        = @item.notes
+      %li.list-group-item
+        %p Category:
+        = @item.category
 - if user_signed_in?
-  = link_to 'Edit', edit_kanji_path(@kanji)
+  = link_to 'Edit', edit_item_path(@item)

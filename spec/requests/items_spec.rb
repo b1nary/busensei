@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Kanjis", type: :request do
-  describe "GET /kanjis" do
+RSpec.describe "Items", type: :request do
+  describe "GET /items" do
     it "works! (now write some real specs)" do
-      get kanjis_path
+      get items_path
       expect(response).to have_http_status(200)
     end
   end

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "kanjis/index", type: :view do
+RSpec.describe "items/index", type: :view do
   before(:each) do
-    assign(:kanjis, [
-      Kanji.create!(
+    assign(:items, [
+      Item.create!(
         :key => 2,
         :word => "Word",
         :reading => "Reading",
@@ -13,7 +13,7 @@ RSpec.describe "kanjis/index", type: :view do
         :opposites => "Opposites",
         :found_in => "Found In"
       ),
-      Kanji.create!(
+      Item.create!(
         :key => 2,
         :word => "Word",
         :reading => "Reading",
@@ -26,7 +26,7 @@ RSpec.describe "kanjis/index", type: :view do
     ])
   end
 
-  it "renders a list of kanjis" do
+  it "renders a list of items" do
     render
     assert_select "tr>td", :text => 2.to_s, :count => 2
     assert_select "tr>td", :text => "Word".to_s, :count => 2
