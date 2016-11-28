@@ -13,8 +13,9 @@ Rails.application.routes.draw do
     resources :videos, only: [:index, :show]
     resources :illustrations, only: [:index, :show]
     resources :items, only: [:index, :show]
+    get :vocabulary, to: 'items#vocabulary'
     get :proverbs, to: 'items#proverbs'
-    get :kotowaza, to: 'items#kotowaza'
+    get :idioms, to: 'items#idioms'
     get '/contact', to: 'welcomes#contact'
 
     # Main page

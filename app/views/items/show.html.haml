@@ -15,5 +15,8 @@
       %li.list-group-item
         %p Notes:
         = @item.notes
+      %li.list-group-item
+        %p Category:
+        = @item.category
 - if user_signed_in?
   = link_to 'Edit', edit_item_path(@item)

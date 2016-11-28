@@ -5,12 +5,16 @@ class ItemsController < ApplicationController
     @items = Item.all.order(reading: :asc).page(params[:page]).per(50)
   end
 
-  def proverbs
+  def vocabulary
     @items = Item.all.search("category: 'Vocab'").page(params[:page]).per(50)
   end
 
-  def kotowaza
+  def proverbs
     @items = Item.all.search("category: 'kotowaza'").page(params[:page]).per(50)
+  end
+
+  def idioms
+    @items = Item.all.search("category: 'yjjg'").page(params[:page]).per(50)
   end
 
   def show
