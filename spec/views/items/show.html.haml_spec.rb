@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "kanjis/show", type: :view do
+RSpec.describe "items/show", type: :view do
   before(:each) do
-    @kanji = assign(:kanji, Kanji.create!(
+    @item = assign(:item, Item.create!(
       :key => 2,
       :word => "Word",
       :reading => "Reading",

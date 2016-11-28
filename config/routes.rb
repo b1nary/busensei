@@ -6,15 +6,15 @@ Rails.application.routes.draw do
     authenticate :user do
       resources :videos, except: [:index, :show]
       resources :illustrations, except: [:index, :show]
-      resources :kanjis, except: [:index, :show]
+      resources :items, except: [:index, :show]
     end
 
     # Public stuff
     resources :videos, only: [:index, :show]
     resources :illustrations, only: [:index, :show]
-    resources :kanjis, only: [:index, :show]
-    get :proverbs, to: 'kanjis#proverbs'
-    get :kotowaza, to: 'kanjis#kotowaza'
+    resources :items, only: [:index, :show]
+    get :proverbs, to: 'items#proverbs'
+    get :kotowaza, to: 'items#kotowaza'
     get '/contact', to: 'welcomes#contact'
 
     # Main page

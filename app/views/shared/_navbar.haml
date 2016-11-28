@@ -3,13 +3,13 @@
     = t('.brand')
   %ul.nav.nav-pills.float-md-left
     %li.nav-item.dropdown
-      %button#kanjiMenu.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+      %button#itemMenu.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
         %span.mdi.mdi-translate
-        Database
-      .dropdown-menu{"aria-labelledby" => "kanjiMenu"}
-        = link_to kanjis_path, class: 'dropdown-item' do
+        Study Material
+      .dropdown-menu{"aria-labelledby" => "itemMenu"}
+        = link_to items_path, class: 'dropdown-item' do
           %span.mdi.mdi-database
-          Full Database
+          All Items
         = link_to proverbs_path, class: 'dropdown-item' do
           %span.mdi.mdi-cat
           Proverbs

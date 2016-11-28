@@ -1,4 +1,4 @@
-class Kanji < ApplicationRecord
+class Item < ApplicationRecord
   include SearchCop
 
   search_scope :search do

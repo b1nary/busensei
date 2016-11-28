@@ -1,9 +1,9 @@
-= simple_form_for @kanji do |f|
-  - if @kanji.errors.any?
+= simple_form_for @item do |f|
+  - if @item.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@kanji.errors.count, "error")} prohibited this kanji from being saved:"
+      %h2= "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
       %ul
-        - @kanji.errors.full_messages.each do |msg|
+        - @item.errors.full_messages.each do |msg|
           %li= msg
   .row
     .col-sm-6

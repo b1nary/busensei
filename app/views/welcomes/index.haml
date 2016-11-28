@@ -21,12 +21,12 @@
           %span.mdi.mdi-translate
           = t('.random_vocab')
         %ul.list-group.list-group-flush
-          - @kanjis.each do |kanji|
+          - @items.each do |item|
             %li.list-group-item
-              = link_to kanji do
-                %h1= kanji.word
-                %p= kanji.reading
-                %p= kanji.english
+              = link_to item do
+                %h1= item.word
+                %p= item.reading
+                %p= item.english
   .col-lg-4
     .card
       .card-block

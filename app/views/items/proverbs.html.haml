@@ -1,14 +1,3 @@
-%h1
-  %span.mdi.mdi-comment-question-outline
-  Study Materials
-%p
-  All my study materials for KanKen1, KotoKen, etc. It's all just sorta dumped in here at the moment. Working on organization!
-  %br
-  漢検やこと検などの勉強資料の保管場所です。必死に整理整頓をやっていますので、ご了承ください。
-- if user_signed_in?
-  = link_to 'New Item', new_item_path, class: 'btn btn-success'
-  %br
-  %br
 = paginate @items, theme: 'twitter-bootstrap-4'
 - @items.each_slice(3) do |row|
   .row
