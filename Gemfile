@@ -32,9 +32,10 @@ gem 'jquery-rails', '~> 4.2.1' # jQuery, super handy
 gem 'bootstrap', '~> 4.0.0.alpha5' # Bootstrap 4 for layout
 
 # Busensei stuff
-gem 'kaminari', '~> 0.17.0'
-gem 'paperclip', '~> 5.1.0'
-gem 'aws-sdk', '~> 2.6.26'
+gem 'kaminari', '~> 0.17.0' # Pagination
+gem 'paperclip', '~> 5.1.0' # Image uploads
+gem 'aws-sdk', '~> 2.6.26' # Image uploads from Heroku to Amazon S3
+gem 'search_cop' # Search
 
 # Bower
 source 'https://rails-assets.org' do

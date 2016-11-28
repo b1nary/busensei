@@ -1,4 +1,6 @@
 ja:
+  actions:
+    search: Search
   shared:
     navbar:
       brand: BuSensei
@@ -6,7 +8,7 @@ ja:
       study_materials: 漢検/諺/当て字/等々
       illustrations: イラストで解説
       videos: 動画
-      about_contact: About/Contact
+      about_contact: About
   welcomes:
     index:
       intro: 漢字ヲタク　ブレット・メイヤーです。通称『ぶ先生』！漢字や諺の勉強資料を纏めてアップした！楽しんで漢字を勉強してください！

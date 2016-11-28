@@ -1,15 +1,22 @@
 %nav.navbar.navbar-fixed-top.navbar-light.bg-faded
   = link_to root_url, class: 'navbar-brand' do
     = t('.brand')
+  %ul.nav.nav-pills.float-md-left
+    %li.nav-item.dropdown
+      %button#kanjiMenu.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+        %span.mdi.mdi-translate
+        Database
+      .dropdown-menu{"aria-labelledby" => "kanjiMenu"}
+        = link_to kanjis_path, class: 'dropdown-item' do
+          %span.mdi.mdi-database
+          Full Database
+        = link_to proverbs_path, class: 'dropdown-item' do
+          %span.mdi.mdi-cat
+          Proverbs
+        = link_to kotowaza_path, class: 'dropdown-item' do
+          %span.mdi 諺
+          Kotowaza
   %ul.nav.nav-pills.float-md-right
-    %li.nav-item
-      = link_to kanjis_path, class: 'nav-link' do
-        %span.mdi.mdi-comment-question-outline
-        = t('.test')
-    %li.nav-item
-      = link_to kanjis_path, class: 'nav-link' do
-        %span.mdi.mdi-comment-question-outline
-        = t('.study_materials')
     %li.nav-item
       = link_to illustrations_path, class: 'nav-link' do
         %span.mdi.mdi-cards
@@ -24,6 +31,6 @@
         = t('.about_contact')
     %li.nav-item
       - if I18n.locale == :en
-        = link_to content_tag(:span, '', class: 'mdi mdi-translate') + ' 日本語', current_path_new_locale('ja'.to_sym), class: 'btn btn-secondary'
+        = link_to '日本語', current_path_new_locale('ja'.to_sym), class: 'btn btn-secondary'
       - else
-        = link_to content_tag(:span, '', class: 'mdi mdi-translate') + ' English', current_path_new_locale('en'.to_sym), class: 'btn btn-secondary'
+        = link_to 'English', current_path_new_locale('en'.to_sym), class: 'btn btn-secondary'

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :videos, only: [:index, :show]
     resources :illustrations, only: [:index, :show]
     resources :kanjis, only: [:index, :show]
+    get :proverbs, to: 'kanjis#proverbs'
+    get :kotowaza, to: 'kanjis#kotowaza'
     get '/contact', to: 'welcomes#contact'
 
     # Main page

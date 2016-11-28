@@ -1,12 +1,14 @@
 en:
+  actions:
+    search: Search
   shared:
     navbar:
       brand: BuSensei
       test: Test
-      study_materials: Study Materials
+      study_materials: Study
       illustrations: Illustrations
       videos: Videos
-      about_contact: About/Contact
+      about_contact: About
   welcomes:
     index:
       intro: Hi, I'm Bret! Please enjoy my Japanese study materials!
