@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get :vocabulary, to: 'items#vocabulary'
     get :proverbs, to: 'items#proverbs'
     get :idioms, to: 'items#idioms'
+    get :ateji, to: 'items#ateji'
     get '/contact', to: 'welcomes#contact'
 
     # Main page

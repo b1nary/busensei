@@ -17,6 +17,10 @@ class ItemsController < ApplicationController
     @items = Item.all.search("category: 'yjjg'").page(params[:page]).per(50)
   end
 
+  def ateji
+    @items = Item.all.search("category: 'ateji'").page(params[:page]).per(50)
+  end
+
   def show
   end
 
