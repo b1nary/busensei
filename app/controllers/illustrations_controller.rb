@@ -1,6 +1,6 @@
 class IllustrationsController < ApplicationController
-  before_filter :set_illustration, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
+  before_action :set_illustration, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
 
   def index
     @illustrations = Illustration.order("created_at DESC").page(params[:page]).per(10)

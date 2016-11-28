@@ -2,23 +2,23 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.order(reading: :asc).page(params[:page]).per(50)
+    @items = Item.all.order(reading: :asc).page(params[:page])
   end
 
   def vocabulary
-    @items = Item.all.search("category: 'Vocab'").page(params[:page]).per(50)
+    @items = Item.all.search("category: 'Vocab'").order(reading: :asc).page(params[:page])
   end
 
   def proverbs
-    @items = Item.all.search("category: 'kotowaza'").page(params[:page]).per(50)
+    @items = Item.all.search("category: 'kotowaza'").order(reading: :asc).page(params[:page])
   end
 
   def idioms
-    @items = Item.all.search("category: 'yjjg'").page(params[:page]).per(50)
+    @items = Item.all.search("category: 'yjjg'").order(reading: :asc).page(params[:page])
   end
 
   def ateji
-    @items = Item.all.search("category: 'ateji'").page(params[:page]).per(50)
+    @items = Item.all.search("category: 'ateji'").order(reading: :asc).page(params[:page])
   end
 
   def show
