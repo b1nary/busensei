@@ -9,7 +9,6 @@ gem 'puma', '~> 3.6.0' # Faster local server
 gem 'rails-i18n', '~> 5.0.0' # Show different languages
 gem 'pg', '~> 0.18.4' # Postgres databases are cool
 gem 'turbolinks', '~> 5.0.0' # Only reload page content
-gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
 
 # Authentication
 gem 'devise', '~> 4.2.0' # Users! Everywhere!

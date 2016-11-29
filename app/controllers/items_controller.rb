@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
 
   private
     def set_item
-      @item = Item.find(params[:id])
+      @item = Item.find_by(slug: params[:id])
     end
     def item_params
       params.require(:item).permit(:key, :word, :reading, :english, :notes, :synonyms, :opposites, :found_in, :japanese, :origin, :test, :level, :category)
