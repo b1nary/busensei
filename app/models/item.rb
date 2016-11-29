@@ -9,5 +9,5 @@ class Item < ApplicationRecord
     self.slug = self.reading.downcase.strip.gsub(' ', '-')
   end
 
-  after_save :create_slug
+  before_save :create_slug
 end
