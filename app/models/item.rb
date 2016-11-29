@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   end
 
   def create_slug
-    self.slug = self.reading.downcase.strip.gsub(' ', '-')
+    self.slug = self.word.downcase.strip.gsub(' ', '-')
   end
 
   before_save :create_slug
